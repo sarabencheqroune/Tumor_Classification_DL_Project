@@ -1,0 +1,143 @@
+[
+  {
+    "timestamp": "2026-05-18T10:05:12.685516",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "Model loaded successfully"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:46.245073",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260518_100546_dab05f.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:48.073527",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=100.00%, needs_review=False)",
+    "prediction": "glioma",
+    "confidence": 0.9999972581863403,
+    "needs_human_review": false,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260518_100546_dab05f.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:48.073926",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100546_dab05f",
+    "message": "Classified: glioma (100.00%)"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:48.081522",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "MRI-6_DAB05F"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:53.007176",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:53.058833",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100553_MRI-6_DAB05F_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100553_MRI-6_DAB05F_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:53.059042",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "MRI-6_DAB05F"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:53.059193",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "Report generated: 20260518_100546_dab05f",
+    "pdf": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100553_MRI-6_DAB05F_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.869255",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260518_100634_5c24d0.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.925009",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ImageClassifierAgent: classified as 'meningioma' (confidence=99.89%, needs_review=False)",
+    "prediction": "meningioma",
+    "confidence": 0.9988625049591064,
+    "needs_human_review": false,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260518_100634_5c24d0.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.925489",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100634_5c24d0",
+    "message": "Classified: meningioma (99.89%)"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.934045",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "MRI-4_5C24D0"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.986858",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.993145",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100634_MRI-4_5C24D0_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100634_MRI-4_5C24D0_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.993577",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "MRI-4_5C24D0"
+  },
+  {
+    "timestamp": "2026-05-18T10:06:34.993853",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260518_100512",
+    "message": "Report generated: 20260518_100634_5c24d0",
+    "pdf": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260518_100634_MRI-4_5C24D0_report.pdf"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2026-05-17T17:12:41.110724",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171240",
+    "message": "Model loaded successfully"
+  }
+]

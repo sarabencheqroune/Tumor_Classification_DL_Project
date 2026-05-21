@@ -1,0 +1,258 @@
+[
+  {
+    "timestamp": "2026-05-17T17:14:49.712720",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "Model loaded successfully"
+  },
+  {
+    "timestamp": "2026-05-17T17:17:12.034685",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_171712_f271fe.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:17:12.078352",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=49.53%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.495345801115036,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_171712_f271fe.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:17:12.078765",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171712_f271fe",
+    "message": "Classified: glioma (49.53%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:20:52.592455",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172052_f6368d.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:20:52.627216",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=51.96%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5195529460906982,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172052_f6368d.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:20:52.627620",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172052_f6368d",
+    "message": "Classified: glioma (51.96%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:13.703521",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172113_d53907.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:13.744879",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=53.69%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5369008183479309,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172113_d53907.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:13.745291",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172113_d53907",
+    "message": "Classified: glioma (53.69%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:17.748034",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172117_8fe3b5.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:17.785244",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=53.69%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5369008183479309,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172117_8fe3b5.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:17.785711",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172117_8fe3b5",
+    "message": "Classified: glioma (53.69%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.659138",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172118_d3709a.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.690966",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=53.69%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5369008183479309,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172118_d3709a.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.691527",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172118_d3709a",
+    "message": "Classified: glioma (53.69%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.837647",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172118_e8140d.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.863376",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=53.69%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5369008183479309,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172118_e8140d.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:18.863855",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172118_e8140d",
+    "message": "Classified: glioma (53.69%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:19.006603",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172119_52852c.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:19.036615",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=53.69%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5369008183479309,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172119_52852c.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:19.037139",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172119_52852c",
+    "message": "Classified: glioma (53.69%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:27.763878",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172127_fc3caf.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:27.793033",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=51.86%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5185582637786865,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/logs/uploads/20260517_172127_fc3caf.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T17:21:27.793754",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_172127_fc3caf",
+    "message": "Classified: glioma (51.86%)"
+  },
+  {
+    "timestamp": "2026-05-17T17:22:20.323340",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "MRI-7_FC3CAF"
+  },
+  {
+    "timestamp": "2026-05-17T17:22:28.135321",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-17T17:22:28.213138",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_172228_MRI-7_FC3CAF_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_172228_MRI-7_FC3CAF_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T17:22:28.213854",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "MRI-7_FC3CAF"
+  },
+  {
+    "timestamp": "2026-05-17T17:22:28.214262",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260517_171449",
+    "message": "Report generated: 20260517_172127_fc3caf",
+    "pdf": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_172228_MRI-7_FC3CAF_report.pdf"
+  }
+]

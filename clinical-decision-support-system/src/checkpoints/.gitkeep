@@ -1,0 +1,2 @@
+# Place trained model weights here: resnet18_braintumor.pt
+# Run notebooks/02_model_training.ipynb or src/models/train.py to generate.

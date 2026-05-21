@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuraScan — Clinical MRI Decision Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0093AF;
+    --teal-dark: #006f85;
+    --teal-deep: #004f61;
+    --teal-light: #e0f4f8;
+    --teal-mid: #b3e2ec;
+    --dogwood: #EDCDC2;
+    --dogwood-dark: #d4a898;
+    --dogwood-deep: #b8806e;
+    --dogwood-light: #faf4f1;
+    --dogwood-mid: #f7e5de;
+    --white: #ffffff;
+    --ink: #1a2e35;
+    --ink-soft: #3d5560;
+    --ink-muted: #7a9aa5;
+    --border: rgba(0, 147, 175, 0.15);
+    --border-warm: rgba(237, 205, 194, 0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5eeeb;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ── */
+  .app {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    grid-row: 1 / 3;
+    background: var(--teal);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: 60px; left: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.06);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-mark {
+    width: 44px; height: 44px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-mark::before {
+    content: '';
+    position: absolute;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+  }
+
+  .logo-mark::after {
+    content: '';
+    position: absolute;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-sub {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-left: 14px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.875rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  .nav-item.active {
+    background: rgba(255,255,255,0.18);
+    color: white;
+    font-weight: 500;
+  }
+
+  .nav-icon {
+    width: 18px; height: 18px;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
+  .sidebar-stat {
+    background: rgba(0,0,0,0.12);
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sidebar-stat-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-stat-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1;
+  }
+
+  .sidebar-stat-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dogwood-light);
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-warm);
+  }
+
+  .header-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .header-left p {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .badge-teal {
+    background: var(--teal-light);
+    color: var(--teal-dark);
+  }
+
+  .badge-warm {
+    background: var(--dogwood-mid);
+    color: var(--dogwood-deep);
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    background: #f5eeeb;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+  }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-warm);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,147,175,0.08);
+  }
+
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .stat-card.teal::after { background: var(--teal); }
+  .stat-card.warm::after { background: var(--dogwood-dark); }
+  .stat-card.deep::after { background: var(--teal-deep); }
+  .stat-card.soft::after { background: var(--dogwood); }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  /* ── PATIENT FORM ── */
+  .patient-form {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border-warm);
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 1.5rem 1.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 1.75rem 1.75rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .form-group input, .form-group select {
+    padding: 10px 12px;
+    border: 1.5px solid var(--border-warm);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    background: white;
+    transition: all 0.2s;
+  }
+
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(0,147,175,0.1);
+  }
+
+  .comorbidities-group, .symptoms-group {
+    grid-column: span 2;
+  }
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .comorbidity-tag {
+    background: var(--teal-light);
+    color: var(--teal-dark);
+  }
+
+  .comorbidity-tag.selected {
+    background: var(--teal);
+    color: white;
+  }
+
+  .symptom-tag {
+    background: var(--dogwood-mid);
+    color: var(--dogwood-deep);
+  }
+
+  .symptom-tag.selected {
+    background: var(--dogwood-dark);
+    color: white;
+  }
+
+  /* ── UPLOAD SECTION ── */
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border-warm);
+    overflow: hidden;
+  }
+
+  .card-body {
+    padding: 0 1.75rem 1.75rem;
+  }
+
+  .upload-zone {
+    border: 2px dashed var(--teal-mid);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    background: var(--teal-light);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .upload-zone:hover {
+    border-color: var(--teal);
+    background: rgba(0, 147, 175, 0.08);
+  }
+
+  .upload-icon {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 16px rgba(0,147,175,0.15);
+  }
+
+  .upload-icon svg {
+    width: 26px; height: 26px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .upload-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--teal-deep);
+    margin-bottom: 6px;
+  }
+
+  .upload-sub {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .btn-teal {
+    background: var(--teal);
+    color: white;
+  }
+
+  .btn-teal:hover { background: var(--teal-dark); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--teal);
+    border: 1.5px solid var(--teal);
+  }
+
+  .btn-outline:hover { background: var(--teal-light); }
+
+  .mri-preview {
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .mri-preview.visible { display: block; }
+
+  .mri-preview img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  /* ── PIPELINE ── */
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pipeline-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .pipeline-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 36px;
+    width: 2px;
+    height: calc(100% - 4px);
+    background: var(--border-warm);
+  }
+
+  .step-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-dot.idle {
+    background: var(--dogwood-mid);
+    color: var(--dogwood-deep);
+    border: 2px solid var(--border-warm);
+  }
+
+  .step-dot.active {
+    background: var(--teal);
+    color: white;
+    animation: pulse 2s infinite;
+  }
+
+  .step-dot.done {
+    background: var(--teal-dark);
+    color: white;
+  }
+
+  .step-dot.warning {
+    background: var(--dogwood-dark);
+    color: white;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,147,175,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(0,147,175,0); }
+  }
+
+  .step-content {
+    padding: 6px 0 1.5rem;
+  }
+
+  .step-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .step-result {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+  }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border-warm);
+    overflow: hidden;
+    display: none;
+  }
+
+  .result-card.visible { display: block; }
+
+  .result-banner {
+    padding: 1.5rem 1.75rem;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .result-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .result-class {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .result-body {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .hitl-panel {
+    background: var(--dogwood-mid);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .hitl-panel.visible { display: block; }
+
+  .btn-approve {
+    background: var(--teal);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-reject {
+    background: transparent;
+    color: var(--dogwood-deep);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1.5px solid var(--dogwood-dark);
+    cursor: pointer;
+  }
+
+  /* ── METRICS SECTION ── */
+  .metrics-container {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border-warm);
+    overflow: hidden;
+  }
+
+  .metrics-header {
+    padding: 1.5rem 1.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .metrics-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .refresh-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 0.75rem;
+  }
+
+  .refresh-btn:hover { background: var(--teal-dark); }
+
+  .f1-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 1.75rem 1.25rem;
+  }
+
+  .f1-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+  }
+
+  .f1-card.accuracy  { background: #D6E4EE; color: #1a3a4f; }
+  .f1-card.weighted  { background: #E8D8D0; color: #3d1f18; }
+  .f1-card.weighted  { background: #E8D8D0; color: #3d1f18; }
+  .f1-card.macro     { background: #C8D8E4; color: #0d2e42; }
+  .f1-card.threshold { background: #DDD0C8; color: #38281e; }
+
+  .f1-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .f1-label {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    margin-top: 5px;
+  }
+
+  .cm-toggle {
+    display: flex;
+    gap: 10px;
+    padding: 0 1.75rem 1rem;
+  }
+
+  .cm-toggle-btn {
+    padding: 6px 16px;
+    border: 1.5px solid var(--teal);
+    background: white;
+    color: var(--teal);
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 0.7rem;
+  }
+
+  .cm-toggle-btn.active {
+    background: var(--teal);
+    color: white;
+  }
+
+  .confusion-matrix {
+    width: calc(100% - 3.5rem);
+    margin: 0 1.75rem 1.5rem;
+    border-collapse: collapse;
+  }
+
+  .confusion-matrix th,
+  .confusion-matrix td {
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .confusion-matrix th {
+    background: var(--ink);
+    color: white;
+    font-weight: 600;
+  }
+
+  .confusion-matrix .row-label {
+    background: var(--ink);
+    color: white;
+    font-weight: 600;
+  }
+
+  .metrics-table {
+    width: calc(100% - 3.5rem);
+    margin: 0 1.75rem 1.5rem;
+    border-collapse: collapse;
+  }
+
+  .metrics-table th,
+  .metrics-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .metrics-table th {
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .metrics-note {
+    margin: 0 1.75rem 1.5rem;
+    padding: 14px 18px;
+    background: var(--teal-light);
+    border-radius: 12px;
+    font-size: 0.78rem;
+    color: var(--teal-dark);
+    border-left: 3px solid var(--teal);
+  }
+
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .log-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .log-entry {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-warm);
+  }
+
+  .log-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+  }
+
+  .log-text {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+
+  .log-agent {
+    font-weight: 500;
+    color: var(--teal);
+  }
+
+  .f1-high { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 100px; }
+  .f1-medium { background: #fff3cd; color: #856404; padding: 3px 10px; border-radius: 100px; }
+  .f1-low { background: #f8d7da; color: #721c24; padding: 3px 10px; border-radius: 100px; }
+
+  /* ── PATIENT METADATA DISPLAY ── */
+  .patient-meta-card {
+    background: var(--teal-light);
+    border-left: 3px solid var(--teal);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .patient-meta-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+
+  .patient-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  .patient-meta-grid .full-row {
+    grid-column: span 2;
+  }
+
+  .patient-meta-grid strong {
+    color: var(--ink);
+  }
+
+  .patient-notes-card {
+    background: #fff8e1;
+    border-left: 3px solid #f9a825;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .patient-notes-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #e65100;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+
+  .patient-notes-body {
+    font-size: 0.82rem;
+    color: #5d4037;
+    line-height: 1.6;
+    white-space: pre-line;
+  }
+
+  .rag-query-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--dogwood-mid);
+    color: var(--dogwood-deep);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 1rem;
+    word-break: break-word;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--teal-mid); border-radius: 100px; }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <div class="logo-name">NeuraScan</div>
+      <div class="logo-sub">Clinical AI Platform</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">Workspace</div>
+      <a class="nav-item active" href="#">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </a>
+      <a class="nav-item" href="#">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        MRI Analysis
+      </a>
+      <a class="nav-item" href="#">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Reports
+      </a>
+    </nav>
+    <div class="sidebar-stat">
+      <div class="sidebar-stat-label">Model Accuracy</div>
+      <div class="sidebar-stat-value" id="sidebarAccuracy">--</div>
+      <div class="sidebar-stat-sub">ResNet18 — Brain Tumor</div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <h1>MRI Triage Dashboard</h1>
+      <p>Clinical Decision Support — AI & Big Data Program</p>
+    </div>
+    <div class="header-right">
+      <span class="badge badge-teal"><span class="badge-dot"></span>System Online</span>
+      <div class="avatar" data-tip="Radiologist">DR</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+      <div class="stat-card teal"><div class="stat-label">Scans Today</div><div class="stat-value counter" id="ct1">0</div></div>
+      <div class="stat-card warm"><div class="stat-label">Avg. Confidence</div><div class="stat-value counter" id="ct2">0%</div></div>
+      <div class="stat-card deep"><div class="stat-label">Awaiting HITL</div><div class="stat-value counter" id="ct3">0</div></div>
+      <div class="stat-card soft"><div class="stat-label">Reports Issued</div><div class="stat-value counter" id="ct4">0</div></div>
+    </div>
+
+    <!-- PATIENT INFORMATION FORM -->
+    <div class="patient-form">
+      <div class="card-header">
+        <span class="card-title"> Patient Information</span>
+        <span class="badge badge-teal">For Personalized Report</span>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="patientName" placeholder="Patient name" value="Anonymous">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="patientAge" placeholder="Years" value="55">
+        </div>
+        <div class="form-group">
+          <label>Sex</label>
+          <select id="patientSex">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="U" selected>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="patientDob" value="1970-01-01">
+        </div>
+        <div class="form-group comorbidities-group">
+          <label>Comorbidities / Medical History</label>
+          <div class="tags-container" id="comorbiditiesTags">
+            <span class="tag comorbidity-tag" data-value="diabetes">Diabetes</span>
+            <span class="tag comorbidity-tag" data-value="hypertension">Hypertension</span>
+            <span class="tag comorbidity-tag" data-value="anticoagulation">Anticoagulation</span>
+            <span class="tag comorbidity-tag" data-value="renal">Renal Impairment</span>
+            <span class="tag comorbidity-tag" data-value="cardiac">Cardiac Disease</span>
+          </div>
+        </div>
+        <div class="form-group symptoms-group">
+          <label>Presenting Symptoms</label>
+          <div class="tags-container" id="symptomsTags">
+            <span class="tag symptom-tag" data-value="headache">Headache</span>
+            <span class="tag symptom-tag" data-value="vision loss">Vision Loss</span>
+            <span class="tag symptom-tag" data-value="seizure">Seizure</span>
+            <span class="tag symptom-tag" data-value="weakness">Weakness</span>
+            <span class="tag symptom-tag" data-value="cognitive">Cognitive Changes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload + Pipeline -->
+    <div class="section-grid">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Upload MRI Scan</span></div>
+        <div class="card-body">
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+            <div class="upload-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+            <div class="upload-title">Drop MRI Scan Here</div>
+            <div class="upload-sub">or click to browse</div>
+            <button class="btn btn-teal" type="button">Choose File</button>
+          </div>
+          <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" style="display:none" onchange="handleFileSelect(event)">
+          <div class="mri-preview" id="mriPreview">
+            <img id="mriImg" src="" alt="MRI Preview">
+          </div>
+          <button class="btn btn-teal" id="classifyBtn" onclick="runClassification()" style="display:none; margin-top:1rem; width:100%">🔬 Run Classification</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-title">Agent Pipeline</span><span class="badge badge-warm" id="pipelineStatus">Waiting</span></div>
+        <div class="card-body">
+          <div class="pipeline">
+            <div class="pipeline-step" id="step1">
+              <div class="step-dot idle" id="dot1">1</div>
+              <div class="step-content">
+                <div class="step-name">Image Classifier</div>
+                <div class="step-result" id="res1" style="display:none"></div>
+              </div>
+            </div>
+            <div class="pipeline-step" id="step2">
+              <div class="step-dot idle" id="dot2">2</div>
+              <div class="step-content">
+                <div class="step-name">HITL Review</div>
+                <div class="step-result" id="res2" style="display:none"></div>
+              </div>
+            </div>
+            <div class="pipeline-step" id="step3">
+              <div class="step-dot idle" id="dot3">3</div>
+              <div class="step-content">
+                <div class="step-name">RAG Report</div>
+                <div class="step-result" id="res3" style="display:none"></div>
+              </div>
+            </div>
+            <div class="pipeline-step" id="step4">
+              <div class="step-dot idle" id="dot4">4</div>
+              <div class="step-content"><div class="step-name">Complete</div></div>
+            </div>
+          </div>
+          <div id="downloadSection" style="display:none; margin-top:1rem;">
+            <button class="btn btn-teal" onclick="downloadReport()" style="width:100%">📄 Download PDF Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Card -->
+    <div class="result-card" id="resultCard">
+      <div class="result-banner">
+        <div><div class="result-label">Classification Result</div><div class="result-class" id="resultClass">—</div></div>
+        <div style="margin-left:auto;text-align:right;"><div class="result-label">Confidence</div><div style="font-size:1.75rem;color:white;" id="resultConf">—</div></div>
+      </div>
+      <div class="result-body">
+        <div id="patientMetaDisplay" style="display:none;"></div>
+        <div id="ragQueryDisplay" style="display:none;"></div>
+        <div id="clinicalSummary" style="margin-bottom:1rem; color: var(--ink-soft);">—</div>
+        <div id="patientNotesDisplay" style="display:none;"></div>
+        <div id="nextSteps"></div>
+        <div class="hitl-panel" id="hitlPanel">
+          <div class="hitl-title"> Human Review Required</div>
+          <div class="hitl-message" id="hitlMsg">Confidence below threshold. Please review.</div>
+          <div class="hitl-actions">
+            <button class="btn-approve" onclick="approveHITL()">✓ Approve</button>
+            <button class="btn-reject" onclick="rejectHITL()">✗ Reject</button>
+            <button class="btn-outline" onclick="overrideHITL()">Override Label</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- METRICS SECTION -->
+    <div class="metrics-container" id="metricsSection">
+      <div class="metrics-header">
+        <div class="metrics-title"> Model Performance Metrics</div>
+        <button class="refresh-btn" onclick="loadMetrics()">🔄 Refresh</button>
+      </div>
+      <div class="f1-cards" id="f1SummaryCards">
+        <div class="f1-card accuracy"><div class="f1-value">--%</div><div class="f1-label">Accuracy</div></div>
+        <div class="f1-card weighted"><div class="f1-value">--%</div><div class="f1-label">Weighted F1</div></div>
+        <div class="f1-card macro"><div class="f1-value">--%</div><div class="f1-label">Macro F1</div></div>
+        <div class="f1-card threshold"><div class="f1-value">80%</div><div class="f1-label">Threshold</div></div>
+      </div>
+      <div class="cm-toggle">
+        <button class="cm-toggle-btn active" onclick="toggleCM('raw')">Raw Counts</button>
+        <button class="cm-toggle-btn" onclick="toggleCM('normalized')">Normalized (%)</button>
+      </div>
+      <div id="confusionMatrixContainer"></div>
+      <table class="metrics-table" id="perClassTable">
+        <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1 Score</th><th>Support</th></tr></thead>
+        <tbody id="perClassTableBody"><tr><td colspan="5">Loading metrics...</td></tr></tbody>
+      </table>
+      <div class="metrics-note" id="thresholdJustificationNote">Loading justification...</div>
+    </div>
+
+    <!-- Audit Log -->
+    <div class="bottom-grid">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Audit Log</span><span class="badge badge-teal">Live</span></div>
+        <div class="card-body"><div class="log-feed" id="logFeed"></div></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ========== PATIENT FORM STATE ==========
+let selectedComorbidities = [];
+let selectedSymptoms = [];
+
+// Initialize tag selection
+document.querySelectorAll('.comorbidity-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    tag.classList.toggle('selected');
+    const value = tag.dataset.value;
+    if (tag.classList.contains('selected')) {
+      if (!selectedComorbidities.includes(value)) selectedComorbidities.push(value);
+    } else {
+      selectedComorbidities = selectedComorbidities.filter(v => v !== value);
+    }
+  });
+});
+
+document.querySelectorAll('.symptom-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    tag.classList.toggle('selected');
+    const value = tag.dataset.value;
+    if (tag.classList.contains('selected')) {
+      if (!selectedSymptoms.includes(value)) selectedSymptoms.push(value);
+    } else {
+      selectedSymptoms = selectedSymptoms.filter(v => v !== value);
+    }
+  });
+});
+
+function getPatientContext() {
+  const age = parseInt(document.getElementById('patientAge').value) || 55;
+  const dob = document.getElementById('patientDob').value;
+  const sex = document.getElementById('patientSex').value;
+  const name = document.getElementById('patientName').value || 'Anonymous';
+  
+  let calculatedAge = age;
+  if (dob) {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    calculatedAge = today.getFullYear() - birthDate.getFullYear();
+  }
+  
+  return { name, age: calculatedAge, sex, dob, comorbidities: selectedComorbidities, symptoms: selectedSymptoms };
+}
+
+// ========== API & STATE ==========
+const API = 'http://localhost:8080/api';
+let currentRunId = null;
+let classificationResult = null;
+let currentFile = null;
+let currentCMData = null;
+let currentCMNormalized = null;
+let currentCMType = 'raw';
+
+// ========== FILE HANDLING ==========
+function handleFileSelect(event) {
+  const file = event.target.files[0];
+  if (file) processFile(file);
+}
+
+function processFile(file) {
+  currentFile = file;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    document.getElementById('mriImg').src = ev.target.result;
+    document.getElementById('mriPreview').classList.add('visible');
+    document.getElementById('classifyBtn').style.display = 'block';
+    document.getElementById('resultCard').classList.remove('visible');
+    resetPipeline();
+    addLog('Orchestrator', `File loaded: ${file.name}`);
+    document.getElementById('pipelineStatus').textContent = 'Ready';
+  };
+  reader.readAsDataURL(file);
+}
+
+function resetPipeline() {
+  ['dot1','dot2','dot3','dot4'].forEach(id => {
+    const el = document.getElementById(id);
+    el.className = 'step-dot idle';
+    el.textContent = id.slice(-1);
+  });
+  ['res1','res2','res3'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  document.getElementById('downloadSection').style.display = 'none';
+  document.getElementById('hitlPanel').classList.remove('visible');
+  document.getElementById('patientMetaDisplay').style.display = 'none';
+  document.getElementById('ragQueryDisplay').style.display = 'none';
+  document.getElementById('patientNotesDisplay').style.display = 'none';
+}
+
+// ========== CLASSIFICATION ==========
+async function runClassification() {
+  if (!currentFile) return;
+  
+  const btn = document.getElementById('classifyBtn');
+  btn.textContent = '⏳ Classifying...';
+  btn.disabled = true;
+  
+  document.getElementById('pipelineStatus').textContent = 'Running CNN...';
+  document.getElementById('resultCard').classList.remove('visible');
+  
+  const dot1 = document.getElementById('dot1');
+  dot1.className = 'step-dot active';
+  
+  addLog('Classifier', 'Running ResNet18 inference...');
+  
+  try {
+    const formData = new FormData();
+    formData.append('file', currentFile);
+    
+    const resp = await fetch(`${API}/classify`, { method: 'POST', body: formData });
+    const data = await resp.json();
+    
+    if (!resp.ok) throw new Error(data.error);
+    
+    currentRunId = data.run_id;
+    classificationResult = data;
+    
+    dot1.className = 'step-dot done';
+    dot1.innerHTML = '✓';
+    document.getElementById('res1').textContent = `${data.prediction_display} — ${data.confidence.toFixed(1)}%`;
+    document.getElementById('res1').style.display = 'inline-flex';
+    
+    addLog('Classifier', `Result: ${data.prediction_display} @ ${data.confidence.toFixed(1)}%`);
+    
+    displayResult(data);
+    
+    const dot2 = document.getElementById('dot2');
+    if (data.needs_human_review) {
+      dot2.className = 'step-dot warning';
+      dot2.textContent = '!';
+      document.getElementById('pipelineStatus').textContent = 'Review Required';
+      document.getElementById('hitlPanel').classList.add('visible');
+      document.getElementById('hitlMsg').innerHTML = `Confidence ${data.confidence.toFixed(1)}% &lt; 80% threshold. Radiologist approval required.`;
+    } else {
+      dot2.className = 'step-dot done';
+      dot2.innerHTML = '✓';
+      document.getElementById('res2').textContent = 'Auto-approved ✓';
+      document.getElementById('res2').style.display = 'inline-flex';
+      addLog('HITL', 'Auto-approved, generating personalized report...');
+      await generateReport('approve');
+    }
+    
+  } catch(err) {
+    addLog('Error', err.message);
+    alert('Classification error: ' + err.message);
+    dot1.className = 'step-dot idle';
+  }
+  
+  btn.textContent = '🔬 Run Classification';
+  btn.disabled = false;
+}
+
+function displayResult(data) {
+  document.getElementById('resultCard').classList.add('visible');
+  document.getElementById('resultClass').textContent = data.prediction_display;
+  document.getElementById('resultConf').textContent = data.confidence.toFixed(1) + '%';
+  
+  const classBars = {
+    'Glioma': 'glioma', 'Meningioma': 'meningioma', 'No Tumor': 'notumor', 'Pituitary Adenoma': 'pituitary'
+  };
+  
+  for (const [name, score] of Object.entries(data.all_scores || {})) {
+    const key = classBars[name];
+    if (key) {
+      const pct = (score * 100).toFixed(1);
+      const bar = document.getElementById(`pb-${key}`);
+      if (bar) bar.style.width = pct + '%';
+    }
+  }
+}
+
+// ========== REPORT GENERATION WITH PATIENT CONTEXT ==========
+async function generateReport(action = 'approve', overrideClass = null) {
+  const dot2 = document.getElementById('dot2');
+  dot2.className = 'step-dot done';
+  dot2.innerHTML = '✓';
+  
+  const dot3 = document.getElementById('dot3');
+  dot3.className = 'step-dot active';
+  document.getElementById('pipelineStatus').textContent = 'Generating personalized report...';
+  
+  const patientContext = getPatientContext();
+  addLog('ReportAgent', `Patient: ${patientContext.name}, Age: ${patientContext.age}, Comorbidities: ${patientContext.comorbidities.join(', ') || 'none'}`);
+  addLog('ReportAgent', `RAG query: "${classificationResult?.prediction_display || 'tumor'} treatment guidelines with age ${patientContext.age}"`);
+  
+  try {
+    let endpoint, body;
+    if (action === 'override') {
+      endpoint = `${API}/hitl/override`;
+      body = { run_id: currentRunId, override_class: overrideClass, notes: 'Radiologist override', patient_context: patientContext };
+    } else {
+      endpoint = `${API}/hitl/approve`;
+      body = { run_id: currentRunId, notes: 'Approved by radiologist', patient_context: patientContext };
+    }
+    
+    const resp = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    const data = await resp.json();
+    
+    if (!resp.ok) throw new Error(data.error);
+    
+    addLog('ReportAgent', 'Retrieved personalized guideline sections from ChromaDB');
+    addLog('ReportAgent', `Generated ${patientContext.age}-year-old patient report`);
+    
+    dot3.className = 'step-dot done';
+    dot3.innerHTML = '✓';
+    document.getElementById('res3').textContent = 'Personalized report ready';
+    document.getElementById('res3').style.display = 'inline-flex';
+    
+    const dot4 = document.getElementById('dot4');
+    dot4.className = 'step-dot done';
+    dot4.innerHTML = '✓';
+    
+    document.getElementById('pipelineStatus').textContent = 'Complete';
+    document.getElementById('pipelineStatus').className = 'badge badge-teal';
+    document.getElementById('downloadSection').style.display = 'flex';
+    
+    // Display patient metadata card
+    const ctx = patientContext;
+    const sexLabel = ctx.sex === 'M' ? 'Male' : ctx.sex === 'F' ? 'Female' : 'Other/Not specified';
+    const metaHtml = `
+      <div class="patient-meta-card">
+        <div class="patient-meta-title">Patient Profile</div>
+        <div class="patient-meta-grid">
+          <div><strong>Name:</strong> ${ctx.name}</div>
+          <div><strong>Age:</strong> ${ctx.age} years</div>
+          <div><strong>Sex:</strong> ${sexLabel}</div>
+          <div><strong>DOB:</strong> ${ctx.dob || '—'}</div>
+          ${ctx.comorbidities.length ? `<div class="full-row"><strong>Comorbidities:</strong> ${ctx.comorbidities.join(', ')}</div>` : ''}
+          ${ctx.symptoms.length ? `<div class="full-row"><strong>Presenting Symptoms:</strong> ${ctx.symptoms.join(', ')}</div>` : ''}
+        </div>
+      </div>`;
+    const metaEl = document.getElementById('patientMetaDisplay');
+    metaEl.innerHTML = metaHtml;
+    metaEl.style.display = 'block';
+
+    // Display RAG query used
+    if (data.rag_query) {
+      const ragEl = document.getElementById('ragQueryDisplay');
+      ragEl.innerHTML = `<div class="rag-query-badge"> RAG Query: "${data.rag_query}"</div>`;
+      ragEl.style.display = 'block';
+    }
+
+    if (data.report_summary) {
+      document.getElementById('clinicalSummary').innerHTML = `<strong> Clinical Summary:</strong><br>${data.report_summary.clinical_summary || 'Report generated with personalized recommendations.'}`;
+
+      // Display patient-specific notes
+      const notesEl = document.getElementById('patientNotesDisplay');
+      if (data.report_summary.patient_specific_notes) {
+        notesEl.innerHTML = `
+          <div class="patient-notes-card">
+            <div class="patient-notes-title">⚠ Patient-Specific Clinical Considerations</div>
+            <div class="patient-notes-body">${data.report_summary.patient_specific_notes}</div>
+          </div>`;
+        notesEl.style.display = 'block';
+      } else {
+        notesEl.style.display = 'none';
+      }
+
+      const stepsHtml = (data.report_summary.recommended_next_steps || []).map(s => `<div style="margin: 5px 0;">✓ ${s}</div>`).join('');
+      document.getElementById('nextSteps').innerHTML = `<strong> Recommended Next Steps:</strong>${stepsHtml}`;
+    }
+
+    addLog('Orchestrator', `Pipeline complete — personalized report ready for ${ctx.name} (${ctx.age}yo ${sexLabel})`);
+    addLog('RAG', `Metadata-enriched query used: ${ctx.comorbidities.length} comorbidities, ${ctx.symptoms.length} symptoms`);
+    loadStats();
+    
+  } catch(err) {
+    addLog('Error', 'Report generation failed: ' + err.message);
+    dot3.className = 'step-dot idle';
+    alert('Report error: ' + err.message);
+  }
+}
+
+async function approveHITL() {
+  document.getElementById('hitlPanel').classList.remove('visible');
+  await generateReport('approve');
+}
+
+async function rejectHITL() {
+  document.getElementById('hitlPanel').classList.remove('visible');
+  document.getElementById('pipelineStatus').textContent = 'Rejected';
+  addLog('HITL', 'Rejected — pipeline halted');
+}
+
+async function overrideHITL() {
+  const newClass = prompt('Enter correct diagnosis:\n1. Glioma\n2. Meningioma\n3. Pituitary Adenoma\n4. No Tumor', '1');
+  if (!newClass) return;
+  const classMap = { '1': 'glioma', '2': 'meningioma', '3': 'pituitary', '4': 'notumor', 'Glioma': 'glioma', 'Meningioma': 'meningioma', 'Pituitary Adenoma': 'pituitary', 'No Tumor': 'notumor' };
+  const override = classMap[newClass] || 'glioma';
+  document.getElementById('hitlPanel').classList.remove('visible');
+  await generateReport('override', override);
+}
+
+function downloadReport() {
+  if (!currentRunId) { alert('No report available'); return; }
+  addLog('Download', `Downloading PDF for run ${currentRunId}`);
+  window.location.href = `${API}/report/download/${currentRunId}`;
+}
+
+// ========== METRICS LOADING ==========
+async function loadMetrics() {
+  try {
+    const f1Resp = await fetch(`${API}/metrics/f1_scores`);
+    if (!f1Resp.ok) throw new Error('Metrics not available');
+    const f1Data = await f1Resp.json();
+    
+    // Update sidebar
+    if (f1Data.overall_accuracy) {
+      document.getElementById('sidebarAccuracy').textContent = `${(f1Data.overall_accuracy * 100).toFixed(1)}%`;
+    }
+    
+    // Update F1 cards
+    const accCard = document.querySelector('.f1-card.accuracy .f1-value');
+    const weightedCard = document.querySelector('.f1-card.weighted .f1-value');
+    const macroCard = document.querySelector('.f1-card.macro .f1-value');
+    
+    if (accCard) accCard.textContent = f1Data.overall_accuracy ? `${(f1Data.overall_accuracy * 100).toFixed(1)}%` : '--%';
+    if (weightedCard) weightedCard.textContent = f1Data.weighted_f1 ? `${(f1Data.weighted_f1 * 100).toFixed(1)}%` : '--%';
+    if (macroCard) macroCard.textContent = f1Data.macro_f1 ? `${(f1Data.macro_f1 * 100).toFixed(1)}%` : '--%';
+    
+    // Per-class table
+    const tableBody = document.getElementById('perClassTableBody');
+    tableBody.innerHTML = '';
+    
+    const perClass = f1Data.per_class_full || f1Data.per_class || {};
+    for (const [className, data] of Object.entries(perClass)) {
+      const f1 = data.f1_score || data.f1 || 0;
+      let f1Class = 'f1-high';
+      if (f1 < 0.7) f1Class = 'f1-low';
+      else if (f1 < 0.85) f1Class = 'f1-medium';
+      
+      tableBody.innerHTML += `
+        <tr>
+          <td><strong>${className}</strong></td>
+          <td>${((data.precision || 0) * 100).toFixed(1)}%</td>
+          <td>${((data.recall || 0) * 100).toFixed(1)}%</td>
+          <td><span class="${f1Class}">${(f1 * 100).toFixed(1)}%</span></td>
+          <td>${data.support || 0}</td>
+        </tr>
+      `;
+    }
+    
+    if (tableBody.children.length === 0) {
+      tableBody.innerHTML = '<tr><td colspan="5">No metrics available. Run evaluation first.</td></tr>';
+    }
+    
+    // Confusion matrix
+    const cmResp = await fetch(`${API}/metrics/confusion_matrix?format=json`);
+    const cmData = await cmResp.json();
+    if (cmData.format === 'json') {
+      currentCMData = cmData.confusion_matrix;
+      currentCMNormalized = cmData.confusion_matrix_normalized;
+      renderConfusionMatrix(currentCMType === 'raw' ? currentCMData : currentCMNormalized, currentCMType);
+    }
+    
+    // Threshold justification
+    const noteSpan = document.getElementById('thresholdJustificationNote');
+    if (f1Data.weighted_f1 >= 0.90) {
+      noteSpan.innerHTML = ` <strong>Excellent performance validated:</strong> Weighted F1: ${(f1Data.weighted_f1 * 100).toFixed(1)}%, Accuracy: ${(f1Data.overall_accuracy * 100).toFixed(1)}%. The 80% confidence threshold is clinically justified — cases below threshold receive appropriate HITL oversight.`;
+    } else if (f1Data.weighted_f1 >= 0.80) {
+      noteSpan.innerHTML = `<strong>Good performance validated:</strong> Weighted F1: ${(f1Data.weighted_f1 * 100).toFixed(1)}%, Accuracy: ${(f1Data.overall_accuracy * 100).toFixed(1)}%. The 80% threshold aligns with clinical best practices.`;
+    } else {
+      noteSpan.innerHTML = ` <strong>Threshold may need adjustment:</strong> Current F1: ${(f1Data.weighted_f1 * 100).toFixed(1)}%. Consider threshold optimization.`;
+    }
+    
+  } catch(err) {
+    console.error('Metrics error:', err);
+    document.getElementById('perClassTableBody').innerHTML = '<tr><td colspan="5"></td></tr>';
+  }
+}
+
+function renderConfusionMatrix(matrix, type) {
+  const container = document.getElementById('confusionMatrixContainer');
+  if (!matrix || matrix.length === 0) {
+    container.innerHTML = '<p style="padding:1.75rem;">No confusion matrix available. Run evaluation first.</p>';
+    return;
+  }
+  
+  const classNames = ['Glioma', 'Meningioma', 'No Tumor', 'Pituitary'];
+  let html = '<table class="confusion-matrix"><thead><tr><th></th>';
+  for (const name of classNames) html += `<th>${name}</th>`;
+  html += '</tr></thead><tbody>';
+  
+  for (let i = 0; i < matrix.length; i++) {
+    html += `<tr><td class="row-label">${classNames[i]}</td>`;
+    for (let j = 0; j < matrix[i].length; j++) {
+      let value = matrix[i][j];
+      let display = type === 'normalized' ? `${(value * 100).toFixed(1)}%` : value;
+      let opacity = type === 'normalized' ? Math.min(0.7, value) : Math.min(0.7, value / 150);
+      html += `<td style="background: rgba(0,147,175, ${opacity}); font-weight: bold;">${display}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function toggleCM(type) {
+  currentCMType = type;
+  renderConfusionMatrix(type === 'raw' ? currentCMData : currentCMNormalized, type);
+  document.querySelectorAll('.cm-toggle-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+async function loadStats() {
+  try {
+    const resp = await fetch(`${API}/stats`);
+    const data = await resp.json();
+    if (data.scans_today !== undefined) {
+      document.getElementById('ct1').textContent = data.scans_today;
+      document.getElementById('ct2').textContent = data.avg_confidence.toFixed(1) + '%';
+      document.getElementById('ct3').textContent = data.awaiting_hitl;
+      document.getElementById('ct4').textContent = data.reports_issued;
+    }
+  } catch(e) {}
+}
+
+function addLog(agent, message) {
+  const feed = document.getElementById('logFeed');
+  const now = new Date();
+  const time = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}:${now.getSeconds().toString().padStart(2,'0')}`;
+  const entry = document.createElement('div');
+  entry.className = 'log-entry fade-in';
+  entry.innerHTML = `<span class="log-time">${time}</span><span class="log-text"><span class="log-agent">[${agent}]</span> ${message}</span>`;
+  feed.insertBefore(entry, feed.firstChild);
+  while (feed.children.length > 12) feed.removeChild(feed.lastChild);
+}
+
+// Initialize
+window.addEventListener('load', () => {
+  loadStats();
+  loadMetrics();
+  setInterval(loadStats, 10000);
+  setInterval(loadMetrics, 30000);
+  addLog('System', 'NeuraScan dashboard ready');
+});
+</script>
+
+<!-- Hidden class bars for result display -->
+<div style="display:none;">
+  <div id="pb-glioma"></div><div id="pp-glioma"></div>
+  <div id="pb-meningioma"></div><div id="pp-meningioma"></div>
+  <div id="pb-pituitary"></div><div id="pp-pituitary"></div>
+  <div id="pb-notumor"></div><div id="pp-notumor"></div>
+</div>
+
+</body>
+</html>

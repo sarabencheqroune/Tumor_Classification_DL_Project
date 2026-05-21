@@ -1,0 +1,125 @@
+[
+  {
+    "timestamp": "2026-05-18T09:34:01.591712",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Initialising Clinical Decision Support System"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.763510",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Pipeline started",
+    "patient_id": "ANON_MENING",
+    "image_path": "demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.763835",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.763966",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.794324",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=52.57%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.5257325768470764,
+    "needs_human_review": true,
+    "image_path": "demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.794773",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.794935",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.5257325768470764,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.795063",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.795360",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.795484",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.795607",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "ANON_MENING"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:09.341388",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:09.403260",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "demo/expected_outputs/20260518_093409_ANON_MENING_report.json",
+    "pdf_path": "demo/expected_outputs/20260518_093409_ANON_MENING_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:09.403513",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANON_MENING"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:09.403689",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_093401",
+    "message": "Pipeline completed successfully"
+  }
+]

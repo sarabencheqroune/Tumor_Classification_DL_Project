@@ -1,0 +1,466 @@
+[
+  {
+    "timestamp": "2026-05-17T16:37:57.031537",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163757",
+    "message": "Pipeline started",
+    "patient_id": "DEMO_GLIOMA",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/glioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.031874",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163757",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.032088",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/glioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.058090",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=38.42%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.3841937482357025,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/glioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.058605",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163757",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.058866",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.3841937482357025,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.059042",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.059313",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.059440",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163757",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.059567",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "DEMO_GLIOMA"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:02.953106",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.003726",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163802_DEMO_GLIOMA_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163802_DEMO_GLIOMA_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.003985",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "DEMO_GLIOMA"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.004170",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163757",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.004395",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline started",
+    "patient_id": "DEMO_MENINGIOMA",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.004536",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.004797",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.027183",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=45.42%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4542367458343506,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/meningioma_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.027735",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.028020",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4542367458343506,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.028300",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.028859",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.029131",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.029425",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "DEMO_MENINGIOMA"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.041303",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.047238",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_MENINGIOMA_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_MENINGIOMA_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.047609",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "DEMO_MENINGIOMA"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.047929",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.048291",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline started",
+    "patient_id": "DEMO_PITUITARY",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.048608",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.049145",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.068377",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=45.64%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4564463198184967,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.069011",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.069338",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4564463198184967,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.069657",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.070104",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.070424",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.070825",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "DEMO_PITUITARY"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.081343",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.086618",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_PITUITARY_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_PITUITARY_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.086995",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "DEMO_PITUITARY"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.087340",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.087772",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline started",
+    "patient_id": "DEMO_NOTUMOR",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.088138",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.088494",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.106601",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=47.15%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4715110659599304,
+    "needs_human_review": true,
+    "image_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.107315",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.107722",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4715110659599304,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.108109",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.108778",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.109343",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.109804",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "DEMO_NOTUMOR"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.119149",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.125380",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_NOTUMOR_report.json",
+    "pdf_path": "/Users/fadwa/DLproject/clinical-decision-support-system/demo/expected_outputs/20260517_163803_DEMO_NOTUMOR_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.125818",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163756",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "DEMO_NOTUMOR"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.127277",
+    "level": "INFO",
+    "logger": "Demo",
+    "run_id": "20260517_163803",
+    "message": "Pipeline completed successfully"
+  }
+]

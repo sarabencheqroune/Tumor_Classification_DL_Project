@@ -1,0 +1,37 @@
+{
+  "patient_id": "MRI-3_2207D1",
+  "patient_metadata": {
+    "name": "Anonymous",
+    "age": 56,
+    "sex": "Not specified",
+    "date_of_birth": "1970-01-01",
+    "comorbidities": [],
+    "presenting_symptoms": []
+  },
+  "run_id": "20260521_080813_2207d1",
+  "timestamp": "2026-05-21T08:08:13.733544",
+  "rag_query": "Clinical guidelines for meningioma brain tumor diagnosis and treatment patient age 56 years",
+  "classification": {
+    "tumor_type": "meningioma",
+    "confidence": 0.9988646507263184,
+    "all_predictions": {
+      "glioma": 0.00010745519830379635,
+      "meningioma": 0.9988646507263184,
+      "notumor": 0.0001475312456022948,
+      "pituitary": 0.0008804198587313294
+    }
+  },
+  "clinical_summary": "Meningioma detected. Typically an extra-axial, slow-growing benign tumor. Assessment of surgical candidacy, symptom burden, and proximity to critical structures is required before deciding between observation and intervention.",
+  "patient_specific_notes": "",
+  "recommended_next_steps": [
+    "Neurosurgery consultation",
+    "CT to evaluate calcification and bone involvement",
+    "MR or CT angiography if adjacent to major venous sinuses",
+    "Ophthalmology referral if near optic chiasm",
+    "Follow-up MRI at 3-6 months if watchful waiting is chosen"
+  ],
+  "medical_guidelines": "MENINGIOMA\n\nDefinition: Meningioma is a tumor arising from the arachnoid cap cells of the meninges \u2014 the protective membranes surrounding the brain and spinal cord. It is extra-axial (outside brain parenchyma).\n\nCharacteristics:\n- Usually slow-growing; most are WHO Grade I (benign)\n- Account for approximately 37% of primary brain tumors\n- More common in women (2:1 female-to-male ratio)\n- Associated with NF2 mutation, prior radiation exposure\n- Can compress adjacent brain tissue despite being benign\n- Atypical (Grade II) and malignant (Grade III) variants exist (~15-20%)\n\nTypical Imaging Findings (MRI):\n- Well-circumscribed, round or lobulated extra-axial mass\n- Homogeneous isointense or hypointense on T1\n- Homogeneous intense enhancement with gadolinium\n- Dural tail sign (thickening/enhancement of adjacent dura) \u2014 pathognomonic\n- Calcification visible on CT (20-30% of cases)\n- Minimal surrounding edema (unless large or aggressive)\n- Hyperostosis (bone thickening) adjacent to skull-base meningiomas\n\nRecommended Next Steps:\n1. CT scan to evaluate calcification and bone involvement\n2. MRI with and without contrast to characterize extent and dural involvement\n3. CT or MR angiography if near major venous sinuses\n4. Neurosurgery consultation to assess resectability and symptom burden\n5. Observation with 6-month follow-up MRI for small asymptomatic tumors\n6. Ophthalmology referral if near optic apparatus\n7. Radiation oncology referral for surgery-ineligible patients or recurrence\n\nPrognosis:\n- Grade I (benign): excellent prognosis; 10-year recurrence rate ~10% after gross total resection\n- Grade II (atypical): 10-year recurrence ~50%\n- Grade III (malignant): aggressive course, poor prognosis similar to high-grade glioma\n- Simpson grade of resection strongly predicts recurrence\n\nTreatment:\n- Watchful waiting for small, asymptomatic, incidental meningiomas\n- Surgical resection (Simpson Grade I-II) for symptomatic tumors\n- Stereotactic radiosurgery (SRS/Gamma Knife) for small residual or recurrent tumors\n- Fractionated radiation for large tumors near critical structures\n\nNO TUMOR\n\nDefinition: No intracranial neoplasm identified. Brain parenchyma and extra-axial spaces are within normal limits.\n\nNormal MRI Findings:\n- Normal gray-white matter differentiation\n- Symmetrical cortical sulci and gyri without abnormal signal\n- Normal ventricular size (no hydrocephalus)\n- No focal mass, abnormal enhancement, or mass effect\n- Normal pituitary gland, no sellar mass\n- Intact blood-brain barrier (no abnormal contrast enhancement)\n\nClinical Significance:\n- Reassuring result \u2014 excludes structural neoplastic pathology\n- Presenting symptoms are attributable to non-neoplastic causes\n- Requires clinical correlation for further workup\n\nRecommendations:\n1. Reassure patient: no evidence of intracranial tumor\n2. Clinical correlation with presenting symptoms is essential\n3. Consider alternative diagnoses:\n   - Migraine or tension headache\n   - Demyelinating disease (MS) \u2014 check for FLAIR white matter lesions\n   - Vascular causes (review MRA/MRV if available)\n   - Psychiatric or functional neurological disorder\n4. Repeat imaging only if symptoms progress, new neurological deficits emerge, or clinical suspicion remains high\n5. Consider other modalities if indicated: CT for calcification, FDG-PET for metabolic activity, EEG for epilepsy workup\n6. Neurology referral if symptoms persist without clear alternative explanation\n\nGLIOMA\n\nDefinition: Glioma is a type of tumor that starts in the glial cells of the brain or spine. Glial cells support and protect neurons.\n\nCharacteristics:\n- Fast-growing, often malignant tumors\n- Can originate anywhere in the brain or spinal cord\n- Most common primary brain tumors in adults (approximately 30% of all brain tumors)\n- Graded I-IV based on aggressiveness (WHO classification); Grade IV (glioblastoma) is the most aggressive\n- Often infiltrative, making complete surgical resection difficult\n\nTypical Imaging Findings (MRI):\n- Irregular, poorly defined borders\n- Heterogeneous signal intensity on T1/T2 sequences\n- Ring enhancement with contrast in high-grade gliomas\n- Surrounding vasogenic edema (T2/FLAIR hyperintensity)\n- Mass effect with midline shift in large tumors\n- Central necrosis in glioblastoma\n\nRecommended Next Steps:\n1. Confirm diagnosis with stereotactic biopsy if resection is not feasible\n2. MRI with and without gadolinium contrast for full staging\n3. Advanced MRI sequences: DTI (diffusion tensor imaging) for white matter tracts, PWI (perfusion-weighted imaging) for vascularity\n4. URGENT referral to neurosurgery for surgical assessment and possible resection\n5. Neuro-oncology consultation for adjuvant chemoradiation planning\n6. Consider molecular profiling (IDH mutation, MGMT methylation) for prognosis and treatment\n7. Enrollment in clinical trials if available\n\nPrognosis:\n- Depends heavily on WHO grade, molecular markers, and patient age\n- Grade II: median survival 5-15 years\n- Grade III: median survival 2-5 years\n- Grade IV (glioblastoma): median survival 14-16 months with standard Stupp protocol (surgery + TMZ + radiation)\n- IDH-mutant tumors carry better prognosis than IDH-wildtype\n\nTreatment:\n- Maximal safe surgical resection (if feasible)\n- Fractionated external beam radiation therapy (60 Gy in 30 fractions for GBM)\n- Temozolomide (TMZ) chemotherapy concurrent with and adjuvant to radiation\n- Tumor treating fields (TTFields) for recurrent or newly-diagnosed GBM\n- Bevacizumab for recurrent high-grade glioma",
+  "radiologist_approval": "Approved",
+  "radiologist_notes": "Approved by radiologist",
+  "disclaimer": "This report is generated by an AI-assisted clinical decision-support system. It is NOT a substitute for professional medical diagnosis. All findings must be confirmed by a qualified radiologist or physician."
+}

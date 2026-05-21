@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-05-21T08:04:11.769500",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260521_080411",
+    "message": "Model loaded successfully"
+  },
+  {
+    "timestamp": "2026-05-21T08:04:11.771218",
+    "level": "INFO",
+    "logger": "NeuraScanServer",
+    "run_id": "20260521_080411",
+    "message": "Metrics loaded from model_evaluation.json"
+  }
+]

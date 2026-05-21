@@ -1,0 +1,668 @@
+[
+  {
+    "timestamp": "2026-05-17T16:36:29.305556",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:29.326468",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:29.492639",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:29.493120",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /does/not/exist.jpg",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:29.658003",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:29.679312",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.363498",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.401839",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.402362",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.403561",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "no_tumor",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.415160",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.415532",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.416329",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.458083",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.458608",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.460244",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.471273",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.533958",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/test_report_saved_to_disk0/20260517_163635_ANONYMOUS_report.json",
+    "pdf_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/test_report_saved_to_disk0/20260517_163635_ANONYMOUS_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.534345",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.707176",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Pipeline started",
+    "patient_id": "PATIENT_X",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.707747",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.708540",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.728459",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.729047",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.729368",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL checkpoint triggered",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.729682",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.730205",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.730513",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.730821",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "PATIENT_X"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.740724",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.741403",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "PATIENT_X"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.741826",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.907521",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.908118",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.908495",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.929603",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.930297",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:35.930725",
+    "level": "WARNING",
+    "logger": "TestSuite",
+    "run_id": "20260517_163635",
+    "message": "Pipeline stopped: radiologist rejected classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.116471",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.117146",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.118002",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.137919",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.138646",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.139144",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Prediction overridden: pituitary \u2192 meningioma"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.139565",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.139964",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.150748",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.151349",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.151719",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.318140",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.318720",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.319343",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.319756",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /nonexistent/mri.jpg",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.320343",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline aborted: classification failed \u2014 File not found: /nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.486354",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.486963",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.487641",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.504946",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.505902",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.506385",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL checkpoint triggered",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.506817",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.507366",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.507724",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.508129",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.518645",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.525141",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/test_pipeline_saves_reports0/20260517_163636_ANONYMOUS_report.json",
+    "pdf_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/test_pipeline_saves_reports0/20260517_163636_ANONYMOUS_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.525777",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.526197",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.692337",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.692938",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.693887",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.711088",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=47.14%, needs_review=True)",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-1/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.711812",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.712227",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL checkpoint triggered",
+    "prediction": "pituitary",
+    "confidence": 0.4713955223560333,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.712624",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.713138",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.713534",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.713913",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.729390",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.730138",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163629",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.730645",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163636",
+    "message": "Pipeline completed successfully"
+  }
+]

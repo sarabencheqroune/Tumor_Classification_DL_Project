@@ -1,0 +1,54 @@
+{
+  "glioma": {
+    "full_name": "Glioma",
+    "icd10": "C71",
+    "brief": "Primary brain tumor arising from glial cells; often malignant, fast-growing.",
+    "urgency": "HIGH",
+    "typical_age": "45-70 years",
+    "key_features": [
+      "Irregular borders on MRI",
+      "Ring enhancement in high-grade lesions",
+      "Surrounding edema",
+      "Heterogeneous signal"
+    ]
+  },
+  "meningioma": {
+    "full_name": "Meningioma",
+    "icd10": "D32",
+    "brief": "Extra-axial tumor arising from meninges; usually benign and slow-growing.",
+    "urgency": "MODERATE",
+    "typical_age": "50-70 years",
+    "key_features": [
+      "Well-circumscribed extra-axial mass",
+      "Dural tail sign",
+      "Homogeneous enhancement",
+      "Adjacent bone changes"
+    ]
+  },
+  "pituitary": {
+    "full_name": "Pituitary Adenoma",
+    "icd10": "D35.2",
+    "brief": "Benign tumor of the anterior pituitary gland; may be functional or non-functional.",
+    "urgency": "MODERATE",
+    "typical_age": "30-60 years",
+    "key_features": [
+      "Intrasellar location",
+      "Possible suprasellar extension",
+      "Homogeneous enhancement",
+      "Pituitary stalk deviation"
+    ]
+  },
+  "no_tumor": {
+    "full_name": "No Tumor Detected",
+    "icd10": "Z03.89",
+    "brief": "No intracranial neoplasm identified. Normal brain parenchyma.",
+    "urgency": "LOW",
+    "typical_age": "Any",
+    "key_features": [
+      "Normal gray-white differentiation",
+      "No focal mass or enhancement",
+      "Normal ventricular size",
+      "Intact sulci and gyri"
+    ]
+  }
+}

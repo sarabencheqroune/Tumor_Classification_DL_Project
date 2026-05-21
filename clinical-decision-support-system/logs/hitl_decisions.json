@@ -1,0 +1,242 @@
+[
+  {
+    "timestamp": "2026-05-17T16:36:35.729994",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "pituitary",
+    "cnn_confidence": 0.4713955223560333,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.507230",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "pituitary",
+    "cnn_confidence": 0.4713955223560333,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:36:36.713013",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "pituitary",
+    "cnn_confidence": 0.4713955223560333,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:10.661672",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4839950501918793,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:37:57.059168",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.3841937482357025,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.028722",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4542367458343506,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.069965",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4564463198184967,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-17T16:38:03.108576",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4715110659599304,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:33:34.825383",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.5121614933013916,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:33:51.735061",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.5412541031837463,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:01.795182",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.5257325768470764,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:34:12.800245",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.5116543769836426,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:57:44.627907",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.9999953508377075,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:57:54.134526",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "meningioma",
+    "cnn_confidence": 0.9999939203262329,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.133931",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "notumor",
+    "cnn_confidence": 0.9999618530273438,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:10.864017",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "pituitary",
+    "cnn_confidence": 0.9999347925186157,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:22.553138",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "notumor",
+    "cnn_confidence": 0.9999618530273438,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:11.758489",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.9999953508377075,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:23.662376",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "meningioma",
+    "cnn_confidence": 0.9999939203262329,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:36.187147",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "notumor",
+    "cnn_confidence": 0.9999618530273438,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.125941",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "pituitary",
+    "cnn_confidence": 0.9999347925186157,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.744701",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4409160614013672,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.813274",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4409160614013672,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.098103",
+    "decision_code": "A",
+    "approved": true,
+    "approval_label": "Approved",
+    "cnn_prediction": "glioma",
+    "cnn_confidence": 0.4409160614013672,
+    "override_class": null,
+    "radiologist_notes": "auto-approved (test mode)"
+  }
+]

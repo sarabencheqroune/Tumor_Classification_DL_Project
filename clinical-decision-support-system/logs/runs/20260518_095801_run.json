@@ -1,0 +1,125 @@
+[
+  {
+    "timestamp": "2026-05-18T09:58:01.670263",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Initialising Clinical Decision Support System"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:01.958364",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Pipeline started",
+    "patient_id": "ANON_NOTUMOR",
+    "image_path": "demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:01.958642",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:01.959088",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.132823",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ImageClassifierAgent: classified as 'notumor' (confidence=100.00%, needs_review=False)",
+    "prediction": "notumor",
+    "confidence": 0.9999618530273438,
+    "needs_human_review": false,
+    "image_path": "demo/sample_mris/notumor_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.133237",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": false
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.133699",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "HITL checkpoint triggered",
+    "prediction": "notumor",
+    "confidence": 0.9999618530273438,
+    "low_confidence": false
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.133817",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.134158",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.134288",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:02.134417",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "notumor",
+    "patient_id": "ANON_NOTUMOR"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:06.999588",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:07.049361",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "demo/expected_outputs/20260518_095807_ANON_NOTUMOR_report.json",
+    "pdf_path": "demo/expected_outputs/20260518_095807_ANON_NOTUMOR_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:07.049595",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANON_NOTUMOR"
+  },
+  {
+    "timestamp": "2026-05-18T09:58:07.049851",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095801",
+    "message": "Pipeline completed successfully"
+  }
+]

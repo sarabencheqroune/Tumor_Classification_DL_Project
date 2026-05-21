@@ -1,0 +1,668 @@
+[
+  {
+    "timestamp": "2026-05-20T19:44:05.761037",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:07.957651",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:08.215542",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:08.215983",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /does/not/exist.jpg",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:08.465030",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:08.476250",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.294425",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.305659",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.306185",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.307527",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "no_tumor",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.316669",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.317168",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.318402",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.328776",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.329274",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.330675",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.341070",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.405990",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/test_report_saved_to_disk0/20260520_194414_ANONYMOUS_report.json",
+    "pdf_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/test_report_saved_to_disk0/20260520_194414_ANONYMOUS_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.406290",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.695145",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194414",
+    "message": "Pipeline started",
+    "patient_id": "PATIENT_X",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.695533",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194414",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.695767",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.743307",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.743818",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194414",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.744096",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.744392",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.745122",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.745495",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194414",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.745755",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "PATIENT_X"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.756369",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.756971",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "PATIENT_X"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:14.757229",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194414",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.006507",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.006984",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.007238",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.018041",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.018761",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.019157",
+    "level": "WARNING",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline stopped: radiologist rejected classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.271272",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.271812",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.272112",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.282829",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.283288",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.283611",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Prediction overridden: glioma \u2192 meningioma"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.283900",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.284189",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.293762",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.294594",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.295069",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.551424",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.552120",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.552770",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.553264",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /nonexistent/mri.jpg",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.553722",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline aborted: classification failed \u2014 File not found: /nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.799132",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.799772",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.800246",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.811127",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.811842",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.812333",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.812808",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.813512",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.814102",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.814446",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.825243",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.831070",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/test_pipeline_saves_reports0/20260520_194415_ANONYMOUS_report.json",
+    "pdf_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/test_pipeline_saves_reports0/20260520_194415_ANONYMOUS_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.831705",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:15.832085",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194415",
+    "message": "Pipeline completed successfully"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.084331",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194416",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.085425",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194416",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.085959",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.096324",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ImageClassifierAgent: classified as 'glioma' (confidence=44.09%, needs_review=True)",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "needs_human_review": true,
+    "image_path": "/private/var/folders/ld/85qwr0cs4jd5g_bkbt5gsq6m0000gn/T/pytest-of-sarabencheqroune/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.096915",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194416",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.097324",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL checkpoint triggered",
+    "prediction": "glioma",
+    "confidence": 0.4409160614013672,
+    "low_confidence": true
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.097720",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.098351",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.098743",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194416",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.099220",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.139659",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.141025",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194405",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-20T19:44:16.143622",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260520_194416",
+    "message": "Pipeline completed successfully"
+  }
+]

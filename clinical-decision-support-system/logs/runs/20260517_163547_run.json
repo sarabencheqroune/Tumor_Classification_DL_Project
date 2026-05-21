@@ -1,0 +1,403 @@
+[
+  {
+    "timestamp": "2026-05-17T16:35:47.341385",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.367312",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.367746",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.538466",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.539009",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /does/not/exist.jpg",
+    "image_path": "/does/not/exist.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.708070",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.729612",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:47.730446",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.017364",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "glioma",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.401350",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.401826",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "TEST_001"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.402850",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "no_tumor",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.413910",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.414433",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.415302",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "meningioma",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.771734",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.772337",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.774016",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.785461",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: RAG retrieved 2 sections"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.846679",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/test_report_saved_to_disk0/20260517_163557_ANONYMOUS_report.json",
+    "pdf_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/test_report_saved_to_disk0/20260517_163557_ANONYMOUS_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:57.847191",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANONYMOUS"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.025950",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Pipeline started",
+    "patient_id": "PATIENT_X",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.026543",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.026875",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.047984",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.048563",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.260840",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.261508",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.261870",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.281181",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.281889",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.452193",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.452837",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.453684",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.473147",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.473767",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.643519",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.644290",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.644915",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.645300",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: invalid image \u2014 File not found: /nonexistent/mri.jpg",
+    "image_path": "/nonexistent/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.816141",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.816763",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163558",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.817121",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.838875",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:58.839557",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:59.011623",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163559",
+    "message": "Pipeline started",
+    "patient_id": "ANONYMOUS",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:59.012646",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163559",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:59.013364",
+    "level": "INFO",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:59.033670",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "iteration over a 0-d tensor",
+    "agent": "ImageClassifierAgent"
+  },
+  {
+    "timestamp": "2026-05-17T16:35:59.034382",
+    "level": "ERROR",
+    "logger": "TestSuite",
+    "run_id": "20260517_163547",
+    "message": "ImageClassifierAgent: CNN failed \u2014 iteration over a 0-d tensor",
+    "image_path": "/private/var/folders/pz/4lgkpxd96k59c695ry0z1pzw0000gn/T/pytest-of-fadwa/pytest-0/imgs0/mri.jpg"
+  }
+]

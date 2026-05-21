@@ -1,0 +1,125 @@
+[
+  {
+    "timestamp": "2026-05-18T09:59:44.651071",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Initialising Clinical Decision Support System"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:44.945630",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Pipeline started",
+    "patient_id": "ANON_PITUIT",
+    "image_path": "demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:44.946056",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Step 1: Image classification"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:44.946588",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ImageClassifierAgent: classification started",
+    "image_path": "demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.125155",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ImageClassifierAgent: classified as 'pituitary' (confidence=99.99%, needs_review=False)",
+    "prediction": "pituitary",
+    "confidence": 0.9999347925186157,
+    "needs_human_review": false,
+    "image_path": "demo/sample_mris/pituitary_01.jpg"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.125549",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Step 2: HITL checkpoint",
+    "low_confidence": false
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.125697",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "HITL checkpoint triggered",
+    "prediction": "pituitary",
+    "confidence": 0.9999347925186157,
+    "low_confidence": false
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.125821",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "HITL: auto-approve mode (non-interactive)"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.126187",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "HITL decision: Approved",
+    "decision_code": "A",
+    "override_class": null
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.126456",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Step 3: Clinical report generation"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:45.126666",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ClinicalReportAgent: generating report",
+    "prediction": "pituitary",
+    "patient_id": "ANON_PITUIT"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:49.578587",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ClinicalReportAgent: RAG retrieved 3 sections"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:49.628772",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ClinicalReportAgent: report saved",
+    "json_path": "demo/expected_outputs/20260518_095949_ANON_PITUIT_report.json",
+    "pdf_path": "demo/expected_outputs/20260518_095949_ANON_PITUIT_report.pdf"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:49.629034",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "ClinicalReportAgent: report generation complete",
+    "patient_id": "ANON_PITUIT"
+  },
+  {
+    "timestamp": "2026-05-18T09:59:49.629209",
+    "level": "INFO",
+    "logger": "ClinicalDSS",
+    "run_id": "20260518_095944",
+    "message": "Pipeline completed successfully"
+  }
+]
